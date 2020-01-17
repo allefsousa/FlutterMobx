@@ -1,4 +1,5 @@
 
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,10 +15,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _changeEmail(value){
     print(value);
+     //recriando a tela
+    setState(() {
+      _buttonEnable = EmailValidator.validate(value);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    print("Desenhando a tela ..");
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
