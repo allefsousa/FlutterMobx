@@ -7,7 +7,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool _buttonEnable = false;
+  void _nextStep(){
+    print("Botão ativado");
+  }
 
+  void _changeEmail(value){
+    print(value);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextField(
+                onChanged: _changeEmail,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(labelText: "E-mail"),
                 enableSuggestions: false,
@@ -39,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'Continuar',
                   style: TextStyle(fontSize: 20.0),
                 ),
-                onPressed: () {},
+                onPressed: _buttonEnable ? _nextStep :null,
                 textColor: Colors.white,
                 color: Colors.blue,
                 disabledColor: Colors.grey,
