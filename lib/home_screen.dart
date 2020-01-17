@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Title(color: Colors.white, child:Text("Mobx")),
+        title: Title(color: Colors.white, child:Text("Utilizando set State")),
       ),
       body: Container(
         child: Padding(
